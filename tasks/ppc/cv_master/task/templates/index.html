@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cv_master</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 80%;
+            margin-top: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 800px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>cv_master</h1></center>
+    <center><img src="{{ static_cv }}"></center>
+    <center>
+    <form action="/confirm" method="POST">
+        <input type="hidden" name="id" id="id" value="{{ captcha_id }}">
+        <input type="text" name="captcha" id="captcha" required placeholder="Введите капчу">
+        <input type="submit" value="Отправить">
+    </form>
+    </center>
+    <center><h3>score: {{ score }}</h3></center>
+</body>
+</html>

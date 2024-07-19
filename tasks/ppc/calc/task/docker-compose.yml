@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  calc:
+    build: .
+    deploy:
+        resources:
+            limits:
+                memory: 500M
+    ports:
+      - 1488:1488
+    environment:
+      FLAG: "2GIS.CTF{cv_m4st3r_c0mpl33t33d11}"
+    restart: always

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  onewaymail2:
+    restart: always
+    build: ./
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+          cpus: '0.5'
+    environment:
+      POSTGRES_HOST: postgres:5432
+      POSTGRES_DB: owm
+      POSTGRES_USER: owm
+      POSTGRES_PASSWORD: owm
+    ports:
+      - 127.0.0.1:5007:5007
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432
+    environment:
+      POSTGRES_DB: owm
+      POSTGRES_USER: owm
+      POSTGRES_PASSWORD: owm
+    volumes:
+      - ./data:/var/lib/postgresql/data

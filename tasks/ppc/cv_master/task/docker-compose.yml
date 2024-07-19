@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  cvmaster:
+    build: .
+    deploy:
+        resources:
+            limits:
+                memory: 1024M
+    ports:
+      - 127.0.0.1:5000:5000
+    environment:
+      SECRET_KEY: "b12c3c9107b-44534258-84d308cf97c"
+      FLAG: "2GIS.CTF{cv_m4st3r_c0mpl33t33d11}"
+    restart: always

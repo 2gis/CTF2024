@@ -1,0 +1,3 @@
+package auth
+
+const SECRET_KEY = "81fa343f4a36a8625d99e912d2dcc2b6b4ae12c806101d00d2fd349ede41f73136efc7ed8cecaa6f3ee504fb213920dc713c4d385783528bdf590b727815c5bf"

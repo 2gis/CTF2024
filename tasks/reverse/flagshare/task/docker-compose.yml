@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  flagshare:
+    restart: always
+    build: ./
+    deploy:
+        resources:
+            limits:
+                memory: 1024M
+    ports:
+      - 7125:7125

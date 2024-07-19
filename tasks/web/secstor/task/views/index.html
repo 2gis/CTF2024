@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SecStor storage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .upload-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    .form-label {
+      display: block;
+      font-weight: bold;
+    }
+    .form-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-submit {
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-submit:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<h1>SecStor Storage</h1>
+<div class="upload-form">
+  <form action="upload" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="file">Select a file:</label>
+      <input type="file" name="file" id="file" class="form-input">
+    </div>
+    <input type="submit" value="Upload File" class="form-submit">
+  </form>
+</div>
+</body>
+</html>

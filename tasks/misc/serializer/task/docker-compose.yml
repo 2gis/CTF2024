@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  accover:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+          cpus: '0.5'
+    ports:
+      - "127.0.0.1:5011:80"
+    volumes:
+      - .:/app/
+    links:
+      - php-accover
+
+  php-accover:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+          cpus: '0.5'
+    volumes:
+      - .:/app/
